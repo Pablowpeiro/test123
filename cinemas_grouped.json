@@ -1,0 +1,1247 @@
+[
+    {
+        "cinema": "Cotentin (Le)",
+        "adresse": "rue Holgate - 50500 Carentan-les-Marais",
+        "lat": 49.3036786,
+        "lon": -1.2463863,
+        "contact": {
+            "nom": "Jonathan Lelièvre",
+            "email": "jonathan@noecinemas.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "086313",
+                "capacite": "187",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "086314",
+                "capacite": "129",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Artéa",
+        "adresse": "BP 20 - 13716 Carnoux-en-Provence",
+        "lat": 43.255669499999996,
+        "lon": 5.568743912728651,
+        "contact": {
+            "nom": "Lydie Ratajczyk",
+            "email": "lydie@mc4-distribution.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "086693",
+                "capacite": "306",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Rivoli",
+        "adresse": "56, av. Victor Hugo - 84200 Carpentras",
+        "lat": 44.04552798779699,
+        "lon": 5.048429249001226,
+        "contact": {
+            "nom": "Florence Passalacqua",
+            "email": "direction@cine-rivoli.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "086781",
+                "capacite": "231",
+                "equipement": "3DNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "086784",
+                "capacite": "163",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "3",
+                "cnc": "086791",
+                "capacite": "63",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "4",
+                "cnc": "086792",
+                "capacite": "155",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Megarama Rambouillet La Lanterne",
+        "adresse": "2 rue de la Légion d'Honneur - 78120 Rambouillet",
+        "lat": 48.6452851,
+        "lon": 1.819207,
+        "contact": {
+            "nom": "Thomas Graux",
+            "email": "tg@megarama.com, assistantprogrammation@megarama.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "331279",
+                "capacite": "120",
+                "equipement": "Numérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Ecran du Cube Garges (L')",
+        "adresse": "Avenue du Général de Gaulle - 95140 Garges-lès-Gonesse",
+        "lat": 48.97642864802322,
+        "lon": 2.392833485191903,
+        "contact": {
+            "nom": "Mickaël ROBERT-GONÇALVES",
+            "email": "mickael.robertgoncalves@lecubegarges.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "173335",
+                "capacite": "196",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Espace Culturel La Fleuraye",
+        "adresse": "Bd Ampère - 44470 Carquefou",
+        "lat": 47.30284339439284,
+        "lon": -1.5075541049985357,
+        "contact": {
+            "nom": "Sylvain Clochard",
+            "email": "sylvain@leconcorde.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "086832",
+                "capacite": "768",
+                "equipement": "3D35mmNumérique",
+                "format_projection": ""
+            }
+        ]
+    },
+    {
+        "cinema": "Cinéma Saint Pierremont",
+        "adresse": "11 rue du Parc Mancieulles - 54790 Val de Briey",
+        "lat": 49.282754,
+        "lon": 5.897542808035714,
+        "contact": {
+            "nom": "",
+            "email": "Henri Biancalana",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "074882",
+                "capacite": "272",
+                "equipement": "Numérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Salettes (Les), Plein Air",
+        "adresse": "Cinema Plein Air - rue Elie Gauthier - 83320 Carqueiranne",
+        "lat": 43.0910087,
+        "lon": 6.0766933,
+        "contact": {
+            "nom": "Mme MANGOT",
+            "email": "contact@cinemasolbia.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "086843",
+                "capacite": "200",
+                "equipement": "35mmNumérique",
+                "format_projection": ""
+            }
+        ]
+    },
+    {
+        "cinema": "Cinéma La Toile de Mer",
+        "adresse": "2 place Gambetta - 44380 Pornichet",
+        "lat": 47.26071885,
+        "lon": -2.337382973426869,
+        "contact": {
+            "nom": "GRP",
+            "email": "Laurent Geissmann",
+            "telephone": "laurent.geissmann@prog-gpci.fr"
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "321146",
+                "capacite": "174",
+                "equipement": "Numérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Salle Multiservice (Batel)",
+        "adresse": "Mairie - 64160 Carrère",
+        "lat": 43.48291329392799,
+        "lon": -0.2793700493474484,
+        "contact": {
+            "nom": "Valérian",
+            "email": "cinema.batel@hotmail.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "086860",
+                "capacite": "0",
+                "equipement": "Numérique",
+                "format_projection": ""
+            },
+            {
+                "salle": "2",
+                "cnc": "",
+                "capacite": "",
+                "equipement": "Numérique",
+                "format_projection": ""
+            }
+        ]
+    },
+    {
+        "cinema": "Juliette Gréco",
+        "adresse": "bd la Colle Belle - 06510 Carros",
+        "lat": 43.770722238988604,
+        "lon": 7.1958266564491655,
+        "contact": {
+            "nom": "Lydie Ratajczyk",
+            "email": "lydie@mc4-distribution.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "086930",
+                "capacite": "277",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "MJC Ciné 113",
+        "adresse": "20, av. de Toulouse - 31320 Castanet-Tolosan",
+        "lat": 43.51712035,
+        "lon": 1.497614522025648,
+        "contact": {
+            "nom": "Programmation régions de Marseille + GRP + DROM et Bordeaux",
+            "email": "Sandrine Gueynard",
+            "telephone": "sandrine.gueynard@veocine.fr"
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "087772",
+                "capacite": "178",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Odyssée (L')",
+        "adresse": "place José Bes - 47700 Casteljaloux",
+        "lat": 44.312953300000004,
+        "lon": 0.08847994332126835,
+        "contact": {
+            "nom": "Programmation régions de Marseille + GRP + DROM et Bordeaux",
+            "email": "Sandrine Gueynard",
+            "telephone": "sandrine.gueynard@veocine.fr"
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "087966",
+                "capacite": "185",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Salle communale Castelnau Durban",
+        "adresse": "09420 Castelnau-Durban - Téléphone: 05 61 96 34 33",
+        "lat": 42.987600799999996,
+        "lon": 1.293757515253109,
+        "contact": {
+            "nom": "Marie Vidal",
+            "email": "cinema@lestive.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "088371",
+                "capacite": "80",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "",
+                "capacite": "",
+                "equipement": "35mmNumérique",
+                "format_projection": ""
+            },
+            {
+                "salle": "3",
+                "cnc": "",
+                "capacite": "",
+                "equipement": "35mmNumérique",
+                "format_projection": ""
+            }
+        ]
+    },
+    {
+        "cinema": "Kursaal",
+        "adresse": "place E. Landouat - 40260 Castets",
+        "lat": 43.882825,
+        "lon": -1.1457945,
+        "contact": {
+            "nom": "Xabi Garat",
+            "email": "ententesaintlouis@gmail.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "088751",
+                "capacite": "106",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Ciné 4",
+        "adresse": "4, place Jasmin - 47330 Castillonnès",
+        "lat": 44.6506766,
+        "lon": 0.5928205,
+        "contact": {
+            "nom": "Programmation régions de Marseille + GRP + DROM et Bordeaux",
+            "email": "Sandrine Gueynard",
+            "telephone": "sandrine.gueynard@veocine.fr"
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "088991",
+                "capacite": "205",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Emeraude cinémas",
+        "adresse": "2, bd Albert 1er - 35800 Dinard",
+        "lat": 48.6352763,
+        "lon": -2.0556693,
+        "contact": {
+            "nom": "Aurélie Saget",
+            "email": "asaget@cinediffusion.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "138922",
+                "capacite": "145",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "138925",
+                "capacite": "354",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Paris (Le)",
+        "adresse": "Rue Aristide Cauchois - 76490 Caudebec-en-Caux",
+        "lat": 49.5254969,
+        "lon": 0.726734772736493,
+        "contact": {
+            "nom": "Jonathan Lelièvre",
+            "email": "jonathan@noecinemas.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "089481",
+                "capacite": "386",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Millénium",
+        "adresse": "Place des Mantilles - 59544 Caudry",
+        "lat": 50.124391,
+        "lon": 3.410362,
+        "contact": {
+            "nom": "Nicolas Houppermans",
+            "email": "programmation@le-millenium.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "089644",
+                "capacite": "191",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "089645",
+                "capacite": "407",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Cinéma Théatre",
+        "adresse": "32, rue des Recollets - 82300 Caussade",
+        "lat": 44.16299241393197,
+        "lon": 1.5381711855253468,
+        "contact": {
+            "nom": "Programmation régions de Marseille + GRP + DROM et Bordeaux",
+            "email": "Sandrine Gueynard",
+            "telephone": "sandrine.gueynard@veocine.fr"
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "090112",
+                "capacite": "240",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Cigale (La)",
+        "adresse": "79, av. Maréchal Joffre - 84300 Cavaillon",
+        "lat": 43.83446620823782,
+        "lon": 5.040995395607277,
+        "contact": {
+            "nom": "Eric Tellene",
+            "email": "",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "090313",
+                "capacite": "360",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Studio MIRAMAR",
+        "adresse": "Maison de la Mer - 50 rond point saint expert",
+        "lat": null,
+        "lon": null,
+        "contact": {
+            "nom": "Xabi Garat",
+            "email": "ententesaintlouis@gmail.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "090345",
+                "capacite": "149",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Armagnac",
+        "adresse": "Barbotan Les Thermes - 32150 Barbotan - Cazaubon",
+        "lat": 43.9502147,
+        "lon": -0.0423427,
+        "contact": {
+            "nom": "Programmation régions de Marseille + GRP + DROM et Bordeaux",
+            "email": "Sandrine Gueynard",
+            "telephone": "sandrine.gueynard@veocine.fr"
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "090763",
+                "capacite": "186",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Capucins (Les)",
+        "adresse": "rue des Capucins - 31220 Cazères",
+        "lat": 43.2046648,
+        "lon": 1.083700932718302,
+        "contact": {
+            "nom": "Pierre-Alexandre Nicaise",
+            "email": "pan@cinefol31.org",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "090932",
+                "capacite": "237",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Cinénacre",
+        "adresse": "5 Allée du Temps Libre - 14440 Douvres-la-Délivrande",
+        "lat": 49.30086798166351,
+        "lon": -0.3830701301965551,
+        "contact": {
+            "nom": "Mathilde Fras",
+            "email": "mathilde@cinemalux.org",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1 Jacques Tati",
+                "cnc": "142371",
+                "capacite": "194",
+                "equipement": "Numérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2 Alice Guy",
+                "cnc": "142372",
+                "capacite": "77",
+                "equipement": "Numérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Cinéma du Théatre",
+        "adresse": "8, av. Charles de Gaulle - 78170 La Celle-Saint-Cloud",
+        "lat": 48.8483876,
+        "lon": 2.1360244234391295,
+        "contact": {
+            "nom": "Benjamin Babski",
+            "email": "bbabski@ville-lacellesaintcloud.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "091492",
+                "capacite": "319",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Cinéma des Cinéastes (Le)",
+        "adresse": "7, av. de Clichy - 75017 Paris",
+        "lat": 48.8843074,
+        "lon": 2.3269007,
+        "contact": {
+            "nom": "Lydie Ratajczyk",
+            "email": "lydie@mc4-distribution.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "003211",
+                "capacite": "314",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "003215",
+                "capacite": "93",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "3",
+                "cnc": "003225",
+                "capacite": "71",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Ceretan",
+        "adresse": "Bd Georges Clémenceau - 66400 Céret",
+        "lat": 42.48612422555144,
+        "lon": 2.7494169435097806,
+        "contact": {
+            "nom": "Michel Laporta",
+            "email": "",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "092302",
+                "capacite": "170",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "7ème Art",
+        "adresse": "Place Lucie Aubrac - BP 51 - 79140 Cerizay",
+        "lat": 46.8207702,
+        "lon": -0.6705205563117064,
+        "contact": {
+            "nom": "Nadia Barteau",
+            "email": "sudcinenadia@orange.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "092441",
+                "capacite": "200",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Espace Grün",
+        "adresse": "32, rue Georges Risler - 68700 Cernay",
+        "lat": 47.80589525,
+        "lon": 7.173393662185271,
+        "contact": {
+            "nom": "Jonathan Lelièvre",
+            "email": "jonathan@noecinemas.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "092542",
+                "capacite": "408",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Familial",
+        "adresse": "46, rue Diderot - 52600 Chalindrey",
+        "lat": 47.80304531079375,
+        "lon": 5.431074952461951,
+        "contact": {
+            "nom": "Franck Mazzacavallo",
+            "email": "theatre.raon@wanadoo.fr, fmprog@orange.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "094711",
+                "capacite": "393",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Espace Ciné",
+        "adresse": "rue Félix Faure - 49290 Chalonnes-sur-Loire",
+        "lat": 47.3531899,
+        "lon": -0.7641002,
+        "contact": {
+            "nom": "Sylvain Clochard",
+            "email": "sylvain@leconcorde.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "094922",
+                "capacite": "274",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Comète (La)",
+        "adresse": "5, rue des Fripiers - BP 233 - 51010 Châlons-en-Champagne",
+        "lat": 48.95633657035371,
+        "lon": 4.364161406134264,
+        "contact": {
+            "nom": "Sarah Beaufol",
+            "email": "sbeaufol@la-comete.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "095006",
+                "capacite": "153",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Bijou (Le)",
+        "adresse": "4, place de la Libération - 93160 Noisy-le-Grand",
+        "lat": 48.848894,
+        "lon": 2.552548,
+        "contact": {
+            "nom": "Christophe GOURJON",
+            "email": "christophe.gourjon@ville-noisylegrand.fr",
+            "telephone": "cinema.jeune.public@ville-noisylegrand.fr"
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "292377",
+                "capacite": "252",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "292378",
+                "capacite": "82",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "3",
+                "cnc": "292379",
+                "capacite": "82",
+                "equipement": "3DNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Espace des Arts",
+        "adresse": "5 bis, av. Nicéphore Niepce - 71100 Chalon-sur-Saône",
+        "lat": 46.7792317,
+        "lon": 4.849407,
+        "contact": {
+            "nom": "Marine Moiraf",
+            "email": "info@espace-des-arts.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "095052",
+                "capacite": "850",
+                "equipement": "Numérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "095056",
+                "capacite": "284",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "CinéMalraux",
+        "adresse": "Malraux scène nationale - Service cinéma - 67 Place François Mitterrand - CS 50147",
+        "lat": null,
+        "lon": null,
+        "contact": {
+            "nom": "Cynthia Labat",
+            "email": "clabat@espacemalraux-chambery.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "095405",
+                "capacite": "157",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Astrée (L')",
+        "adresse": "7, bd du théâtre - 73000 Chambéry",
+        "lat": 45.5661064,
+        "lon": 5.9230203,
+        "contact": {
+            "nom": "Martin Bidou",
+            "email": "martin.bidou@hautetcourt.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "095413",
+                "capacite": "238",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "095414",
+                "capacite": "127",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "3",
+                "cnc": "095415",
+                "capacite": "112",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "4",
+                "cnc": "095404",
+                "capacite": "107",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Cinéma le Forum",
+        "adresse": "7, Boulevard du Théâtre - 73000 Chambéry",
+        "lat": 45.5661064,
+        "lon": 5.9230203,
+        "contact": {
+            "nom": "Martin Bidou",
+            "email": "martin.bidou@hautetcourt.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "095451",
+                "capacite": "63",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "095452",
+                "capacite": "172",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Cinémascoop",
+        "adresse": "18, rue de la Poste - BP 24 - 43400 Le Chambon-sur-Lignon",
+        "lat": 45.0611844,
+        "lon": 4.3029635,
+        "contact": {
+            "nom": "Alain Deleage",
+            "email": "cinema.scoop@orange.fr",
+            "telephone": "alain.deleage@neuf.fr"
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "095732",
+                "capacite": "71",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "095733",
+                "capacite": "125",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "3 Républiques (Les)",
+        "adresse": "10, av. Edouard Herriot - 39300 Champagnole",
+        "lat": 46.7533903267278,
+        "lon": 5.887635014899612,
+        "contact": {
+            "nom": "Lydie Ratajczyk",
+            "email": "lydie@mc4-distribution.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "096611",
+                "capacite": "238",
+                "equipement": "3DNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "096612",
+                "capacite": "86",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "3",
+                "cnc": "096613",
+                "capacite": "65",
+                "equipement": "Numérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Rhodo (Le)",
+        "adresse": "Place du centre - 73350 Champagny-en-Vanoise",
+        "lat": 45.4560203,
+        "lon": 6.6935495,
+        "contact": {
+            "nom": "Lydie Ratajczyk",
+            "email": "lydie@mc4-distribution.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "096641",
+                "capacite": "170",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Embarcadère (L')",
+        "adresse": "Place des droits de l'Homme - 71300 Montceau-les-Mines",
+        "lat": 46.676839799999996,
+        "lon": 4.361045079450696,
+        "contact": {
+            "nom": "Régis Faure",
+            "email": "panacea.regis.faure@gmail.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "269854",
+                "capacite": "",
+                "equipement": "Numérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Mégarama Studio 66",
+        "adresse": "66, rue Jean Jaurès - 94500 Champigny-sur-Marne",
+        "lat": 48.814149,
+        "lon": 2.5081006542553195,
+        "contact": {
+            "nom": "",
+            "email": "Thomas Graux",
+            "telephone": "tg@megarama.com, assistantprogrammation@megarama.com"
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "097431",
+                "capacite": "350",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "097432",
+                "capacite": "185",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "3",
+                "cnc": "097433",
+                "capacite": "144",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "4",
+                "cnc": "097422",
+                "capacite": "160",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "5",
+                "cnc": "097434",
+                "capacite": "105",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Utopia Saint-Siméon",
+        "adresse": "5, place Camille Jullian - 33000 Bordeaux",
+        "lat": 44.839225299999995,
+        "lon": -0.5724140728570286,
+        "contact": {
+            "nom": "Patrick Troudet",
+            "email": "patrick.troudet@cinemas-utopia.org",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "063411",
+                "capacite": "70",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "063412",
+                "capacite": "79",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "3",
+                "cnc": "063413",
+                "capacite": "72",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "4",
+                "cnc": "063414",
+                "capacite": "146",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "5",
+                "cnc": "063415",
+                "capacite": "186",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Elysée (L')",
+        "adresse": "25, av. du Maréchal Joffre - 60500 Chantilly",
+        "lat": 49.1913886,
+        "lon": 2.4642017,
+        "contact": {
+            "nom": "Rod Assous",
+            "email": "cinemaelyseecontact@gmail.com, cinemaelysee@live.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "099031",
+                "capacite": "259",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "099034",
+                "capacite": "100",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "3",
+                "cnc": "099043",
+                "capacite": "61",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "4",
+                "cnc": "099044",
+                "capacite": "100",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Ciné lumière",
+        "adresse": "rue de la plaine - 85110 Chantonnay",
+        "lat": 46.6901078,
+        "lon": -1.0395435339754004,
+        "contact": {
+            "nom": "GRP",
+            "email": "Laurent Geissmann",
+            "telephone": "laurent.geissmann@prog-gpci.fr"
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "099051",
+                "capacite": "160",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Astrolab (L')",
+        "adresse": "1 place Charles Trenet - 31860 Labarthe-sur-Leze",
+        "lat": 43.452377549999994,
+        "lon": 1.399134401085143,
+        "contact": {
+            "nom": "Programmation régions de Marseille + GRP + DROM et Bordeaux",
+            "email": "Sandrine Gueynard",
+            "telephone": "sandrine.gueynard@veocine.fr"
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "724160",
+                "capacite": "206",
+                "equipement": "Numérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "724161",
+                "capacite": "70",
+                "equipement": "Numérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Jacques Demy",
+        "adresse": "11, rue du Stade - 44450 Divatte-sur-Loire",
+        "lat": 47.27042535,
+        "lon": -1.3351511660225344,
+        "contact": {
+            "nom": "GRP",
+            "email": "Laurent Geissmann",
+            "telephone": "laurent.geissmann@prog-gpci.fr"
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "099631",
+                "capacite": "189",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Alpha",
+        "adresse": "24, av. Lamartine - 69751 Charbonnières-les-Bains",
+        "lat": 45.78136671312272,
+        "lon": 4.739520706237254,
+        "contact": {
+            "nom": "Aurélie",
+            "email": "gsflyon@free.fr",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "101692",
+                "capacite": "300",
+                "equipement": "3D35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    },
+    {
+        "cinema": "Crystal Palace",
+        "adresse": "14, rue de Bourgogne - 58400 La Charité-sur-Loire",
+        "lat": 47.1767066,
+        "lon": 3.0220745,
+        "contact": {
+            "nom": "Benoit Michel",
+            "email": "benoit@sceniquanon.com",
+            "telephone": ""
+        },
+        "salles": [
+            {
+                "salle": "1",
+                "cnc": "102173",
+                "capacite": "203",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            },
+            {
+                "salle": "2",
+                "cnc": "102174",
+                "capacite": "98",
+                "equipement": "35mmNumérique",
+                "format_projection": "Numérique 2D"
+            }
+        ]
+    }
+]

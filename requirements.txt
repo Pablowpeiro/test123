@@ -1,0 +1,30 @@
+# Requirements pour l'application Assistant Cinéma MK2 (ai.py)
+# -*- coding: utf-8 -*-
+
+# Interface utilisateur
+streamlit>=1.32.0
+
+# Intelligence artificielle
+openai>=1.12.0
+
+# Géolocalisation et cartographie
+geopy>=2.4.0
+folium>=0.15.0
+streamlit-folium>=0.15.0
+
+# Manipulation de données
+pandas>=1.5.0
+numpy>=1.26.0
+
+# Export Excel
+openpyxl>=3.0.10
+xlsxwriter>=3.1.0
+
+# Utilitaires système
+python-dotenv>=1.0.0
+
+# Bibliothèques standard (incluses avec Python)
+# - json
+# - os
+# - uuid
+# - io 
