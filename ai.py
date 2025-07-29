@@ -15,6 +15,8 @@ import os
 import pandas as pd
 import uuid
 import io # Ajouté pour le buffer Excel en mémoire
+import unicodedata
+import re
 
 # --- CONFIGURATION DE LA PAGE (DOIT ÊTRE LA PREMIÈRE COMMANDE STREAMLIT) ---
 st.set_page_config(layout="wide", page_title="Assistant Cinéma MK2", page_icon="🗺️")
@@ -411,6 +413,21 @@ def analyser_contexte_geographique(description_projet: str):
         st.error(f"Erreur lors de l'analyse du contexte : {e}")
         return None
 
+# --- Fonctions utilitaires ---
+def normaliser_nom_ville(nom):
+    """
+    Normalise un nom de ville/zone pour comparaison : enlève accents, met en minuscules, remplace tirets/underscores par espaces, supprime espaces multiples.
+    """
+    nom = ''.join(
+        c for c in unicodedata.normalize('NFD', nom)
+        if unicodedata.category(c) != 'Mn'
+    )
+    nom = nom.lower()
+    nom = re.sub(r"[-_]", " ", nom)
+    nom = re.sub(r"\s+", " ", nom)
+    nom = nom.strip()
+    return nom
+
 # --- Interface Utilisateur Streamlit ---
 st.title("🗺️ Assistant de Planification Cinéma MK2")
 st.markdown("Décrivez votre projet de diffusion et l'IA identifiera les cinémas pertinents en France.")
@@ -676,9 +693,14 @@ if st.session_state.recherche_cinemas_done and st.session_state.liste_groupes_re
                     "Tu es un expert en analyse de requêtes de modification pour une application de planification cinématographique.\n\n"
                     "🎯 Ton objectif : analyser une demande de modification et retourner des instructions claires.\n\n"
                     "Types de modifications supportées :\n"
-                    "1. AJOUTER des salles : 'rajoute X salles à [ville]', 'ajoute une salle à [ville]'\n"
-                    "2. SUPPRIMER des salles : 'supprime les salles de moins de X places', 'enlève les salles à plus de X km'\n"
+                    "1. AJOUTER des salles ou séances : 'rajoute X salles à [ville]', 'ajoute 10 séances à [ville]', 'ajoute une salle à [ville]'\n"
+                    "2. SUPPRIMER des salles ou séances : 'supprime les salles de moins de X places', 'enlève les salles à plus de X km', 'supprime les séances à [ville]'\n"
                     "3. MODIFIER des critères : 'augmente le rayon à X km pour [ville]', 'cherche des salles de plus de X places'\n\n"
+                    "Le terme 'séance(s)' doit être compris comme 'salle(s)' dans ce contexte.\n"
+                    "Exemples :\n"
+                    "- 'ajoute 10 séances à Paris' => ajouter 10 salles à Paris\n"
+                    "- 'supprime les séances à Marseille' => supprimer toutes les salles à Marseille\n"
+                    "- 'supprime les salles à Lyon' => supprimer toutes les salles à Lyon\n\n"
                     "Retourne un JSON avec :\n"
                     "- action : 'ajouter', 'supprimer', 'modifier'\n"
                     "- localisation : ville concernée (si applicable)\n"
@@ -698,6 +720,11 @@ if st.session_state.recherche_cinemas_done and st.session_state.liste_groupes_re
                     '  "critere": "capacite_min",\n'
                     '  "valeur": 100,\n'
                     '  "operateur": "inferieur"\n'
+                    "}\n\n"
+                    "Pour supprimer toutes les salles d'une ville :\n"
+                    "{\n"
+                    '  "action": "supprimer",\n'
+                    '  "localisation": "Marseille"\n'
                     "}\n\n"
                     "Si la demande n'est pas claire ou non supportée, retourne :\n"
                     "{\n"
@@ -732,6 +759,22 @@ if st.session_state.recherche_cinemas_done and st.session_state.liste_groupes_re
                     raffinage_instruction = json.loads(cleaned_response)
                     st.write(f"🔍 **DEBUG :** Instruction parsée : {raffinage_instruction}")
                     
+                    # --- Normalisation des instructions IA (séance(s) -> salle(s)) ---
+                    def normaliser_instruction_ia(instr):
+                        # Si l'action ou les champs contiennent 'séance', on les remplace par 'salle'
+                        if 'action' in instr and isinstance(instr['action'], str):
+                            instr['action'] = instr['action'].replace('séance', 'salle').replace('séances', 'salles')
+                        if 'critere' in instr and isinstance(instr['critere'], str):
+                            instr['critere'] = instr['critere'].replace('séance', 'salle').replace('séances', 'salles')
+                        # Si le champ nombre est présent, s'assurer que c'est un int
+                        if 'nombre' in instr:
+                            try:
+                                instr['nombre'] = int(instr['nombre'])
+                            except Exception:
+                                instr['nombre'] = 1
+                        return instr
+                    raffinage_instruction = normaliser_instruction_ia(raffinage_instruction)
+                    
                     # Application des modifications
                     modifications_appliquees = False
                     st.write(f"🔍 **DEBUG :** Action détectée : {raffinage_instruction.get('action')}")
@@ -762,8 +805,8 @@ if st.session_state.recherche_cinemas_done and st.session_state.liste_groupes_re
                             # Trouver le groupe existant ou en créer un nouveau
                             groupe_existant = None
                             for groupe in st.session_state.liste_groupes_resultats:
-                                st.write(f"🔍 **DEBUG :** Comparaison : '{groupe['localisation'].lower()}' vs '{localisation.lower()}'")
-                                if groupe["localisation"].lower() == localisation.lower():
+                                st.write(f"🔍 **DEBUG :** Comparaison : '{normaliser_nom_ville(groupe['localisation'])}' vs '{normaliser_nom_ville(localisation)}'")
+                                if normaliser_nom_ville(groupe["localisation"]) == normaliser_nom_ville(localisation):
                                     groupe_existant = groupe
                                     st.write(f"🔍 **DEBUG :** Groupe existant trouvé pour {localisation}")
                                     break
@@ -875,84 +918,95 @@ if st.session_state.recherche_cinemas_done and st.session_state.liste_groupes_re
                         critere = raffinage_instruction.get("critere")
                         valeur = raffinage_instruction.get("valeur")
                         operateur = raffinage_instruction.get("operateur", "inferieur")
-                        st.write(f"🔍 **DEBUG :** Suppression - Critère : '{critere}', Valeur : {valeur}, Opérateur : '{operateur}'")
-                        
-                        # Validation des données
-                        validation_ok = True
-                        if not critere or valeur is None:
-                            st.error("❌ Critère ou valeur manquant pour la suppression")
-                            validation_ok = False
-                        
-                        if validation_ok:
-                            try:
-                                valeur = float(valeur)
-                            except (ValueError, TypeError):
-                                st.error("❌ Valeur numérique invalide pour le critère")
-                                validation_ok = False
-                        
-                        if validation_ok and critere and valeur is not None:
-                            st.write(f"🔍 **DEBUG :** Validation OK, début de la suppression...")
-                            salles_supprimees = 0
+                        localisation = raffinage_instruction.get("localisation")
+                        st.write(f"🔍 **DEBUG :** Suppression - Critère : '{critere}', Valeur : {valeur}, Opérateur : '{operateur}', Localisation : '{localisation}'")
+
+                        # Cas spécial : suppression de toutes les salles d'une localisation
+                        if localisation and not critere:
+                            groupes_supprimes = 0
                             for groupe in st.session_state.liste_groupes_resultats:
-                                resultats_originaux = groupe["resultats"].copy()
-                                st.write(f"🔍 **DEBUG :** Traitement du groupe {groupe['localisation']} : {len(resultats_originaux)} salles avant filtrage")
-                                
-                                # Logique de filtrage améliorée avec opérateurs
-                                if critere == "capacite_min":
-                                    if operateur == "inferieur":
-                                        groupe["resultats"] = [s for s in resultats_originaux if s.get("capacite", 0) >= valeur]
-                                    elif operateur == "superieur":
-                                        groupe["resultats"] = [s for s in resultats_originaux if s.get("capacite", 0) <= valeur]
-                                    else:  # egal
-                                        groupe["resultats"] = [s for s in resultats_originaux if s.get("capacite", 0) == valeur]
-                                
-                                elif critere == "capacite_max":
-                                    if operateur == "inferieur":
-                                        groupe["resultats"] = [s for s in resultats_originaux if s.get("capacite", 0) <= valeur]
-                                    elif operateur == "superieur":
-                                        groupe["resultats"] = [s for s in resultats_originaux if s.get("capacite", 0) >= valeur]
-                                    else:  # egal
-                                        groupe["resultats"] = [s for s in resultats_originaux if s.get("capacite", 0) == valeur]
-                                
-                                elif critere == "distance_max":
-                                    if operateur == "inferieur":
-                                        groupe["resultats"] = [s for s in resultats_originaux if s.get("distance_km", 0) <= valeur]
-                                    elif operateur == "superieur":
-                                        groupe["resultats"] = [s for s in resultats_originaux if s.get("distance_km", 0) >= valeur]
-                                    else:  # egal
-                                        groupe["resultats"] = [s for s in resultats_originaux if s.get("distance_km", 0) == valeur]
-                                
-                                salles_supprimees_groupe = len(resultats_originaux) - len(groupe["resultats"])
-                                salles_supprimees += salles_supprimees_groupe
-                                st.write(f"🔍 **DEBUG :** Groupe {groupe['localisation']} : {salles_supprimees_groupe} salles supprimées, {len(groupe['resultats'])} restantes")
-                                
-                                # Mettre à jour le dataframe d'export
-                                if groupe["localisation"] in st.session_state.dataframes_to_export:
-                                    # Recréer le dataframe avec les nouvelles données
-                                    data_for_df = []
-                                    for cinema in groupe["resultats"]:
-                                        contact = cinema.get("contact", {})
-                                        data_for_df.append({
-                                            "Cinéma": cinema.get("cinema", "N/A"),
-                                            "Salle": cinema.get("salle", "N/A"),
-                                            "Adresse": cinema.get("adresse", "N/A"),
-                                            "Capacité": cinema.get("capacite", 0),
-                                            "Distance (km)": cinema.get("distance_km", 0),
-                                            "Contact": " / ".join(filter(None, [
-                                                contact.get("nom", ""),
-                                                contact.get("email", ""),
-                                                contact.get("telephone", "")
-                                            ])),
-                                            "Latitude": cinema.get("lat", 0.0),
-                                            "Longitude": cinema.get("lon", 0.0)
-                                        })
-                                    st.session_state.dataframes_to_export[groupe["localisation"]] = pd.DataFrame(data_for_df)
-                            
-                            if salles_supprimees > 0:
+                                if groupe["localisation"].lower() == localisation.lower():
+                                    nb_salles = len(groupe["resultats"])
+                                    groupe["resultats"] = []
+                                    groupes_supprimes += nb_salles
+                                    st.write(f"🔍 **DEBUG :** Toutes les salles supprimées pour {localisation} ({nb_salles} salles)")
+                                    # Mettre à jour le dataframe d'export
+                                    if localisation in st.session_state.dataframes_to_export:
+                                        st.session_state.dataframes_to_export[localisation] = st.session_state.dataframes_to_export[localisation].iloc[0:0]
+                            if groupes_supprimes > 0:
                                 modifications_appliquees = True
-                                st.success(f"✅ {salles_supprimees} salle(s) supprimée(s) selon le critère : {critere} {operateur} {valeur}")
+                                st.success(f"✅ Toutes les salles supprimées pour {localisation} ({groupes_supprimes} salles)")
                             else:
-                                st.info("ℹ️ Aucune salle ne correspondait aux critères de suppression")
+                                st.info(f"ℹ️ Aucune salle à supprimer pour {localisation}")
+                        else:
+                            # Validation des données
+                            validation_ok = True
+                            if not critere or valeur is None:
+                                st.error("❌ Critère ou valeur manquant pour la suppression")
+                                validation_ok = False
+                            if validation_ok:
+                                try:
+                                    valeur = float(valeur)
+                                except (ValueError, TypeError):
+                                    st.error("❌ Valeur numérique invalide pour le critère")
+                                    validation_ok = False
+                            if validation_ok and critere and valeur is not None:
+                                st.write(f"🔍 **DEBUG :** Validation OK, début de la suppression...")
+                                salles_supprimees = 0
+                                for groupe in st.session_state.liste_groupes_resultats:
+                                    resultats_originaux = groupe["resultats"].copy()
+                                    st.write(f"🔍 **DEBUG :** Traitement du groupe {groupe['localisation']} : {len(resultats_originaux)} salles avant filtrage")
+                                    # Logique de filtrage améliorée avec opérateurs
+                                    if critere == "capacite_min":
+                                        if operateur == "inferieur":
+                                            groupe["resultats"] = [s for s in resultats_originaux if s.get("capacite", 0) >= valeur]
+                                        elif operateur == "superieur":
+                                            groupe["resultats"] = [s for s in resultats_originaux if s.get("capacite", 0) <= valeur]
+                                        else:  # egal
+                                            groupe["resultats"] = [s for s in resultats_originaux if s.get("capacite", 0) == valeur]
+                                    elif critere == "capacite_max":
+                                        if operateur == "inferieur":
+                                            groupe["resultats"] = [s for s in resultats_originaux if s.get("capacite", 0) <= valeur]
+                                        elif operateur == "superieur":
+                                            groupe["resultats"] = [s for s in resultats_originaux if s.get("capacite", 0) >= valeur]
+                                        else:  # egal
+                                            groupe["resultats"] = [s for s in resultats_originaux if s.get("capacite", 0) == valeur]
+                                    elif critere == "distance_max":
+                                        if operateur == "inferieur":
+                                            groupe["resultats"] = [s for s in resultats_originaux if s.get("distance_km", 0) <= valeur]
+                                        elif operateur == "superieur":
+                                            groupe["resultats"] = [s for s in resultats_originaux if s.get("distance_km", 0) >= valeur]
+                                        else:  # egal
+                                            groupe["resultats"] = [s for s in resultats_originaux if s.get("distance_km", 0) == valeur]
+                                    salles_supprimees_groupe = len(resultats_originaux) - len(groupe["resultats"])
+                                    salles_supprimees += salles_supprimees_groupe
+                                    st.write(f"🔍 **DEBUG :** Groupe {groupe['localisation']} : {salles_supprimees_groupe} salles supprimées, {len(groupe['resultats'])} restantes")
+                                    # Mettre à jour le dataframe d'export
+                                    if groupe["localisation"] in st.session_state.dataframes_to_export:
+                                        # Recréer le dataframe avec les nouvelles données
+                                        data_for_df = []
+                                        for cinema in groupe["resultats"]:
+                                            contact = cinema.get("contact", {})
+                                            data_for_df.append({
+                                                "Cinéma": cinema.get("cinema", "N/A"),
+                                                "Salle": cinema.get("salle", "N/A"),
+                                                "Adresse": cinema.get("adresse", "N/A"),
+                                                "Capacité": cinema.get("capacite", 0),
+                                                "Distance (km)": cinema.get("distance_km", 0),
+                                                "Contact": " / ".join(filter(None, [
+                                                    contact.get("nom", ""),
+                                                    contact.get("email", ""),
+                                                    contact.get("telephone", "")
+                                                ])),
+                                                "Latitude": cinema.get("lat", 0.0),
+                                                "Longitude": cinema.get("lon", 0.0)
+                                            })
+                                        st.session_state.dataframes_to_export[groupe["localisation"]] = pd.DataFrame(data_for_df)
+                                if salles_supprimees > 0:
+                                    modifications_appliquees = True
+                                    st.success(f"✅ {salles_supprimees} salle(s) supprimée(s) selon le critère : {critere} {operateur} {valeur}")
+                                else:
+                                    st.info("ℹ️ Aucune salle ne correspondait aux critères de suppression")
                     
                     elif raffinage_instruction.get("action") == "incompris":
                         st.warning(f"⚠️ Demande non comprise : {raffinage_instruction.get('message', 'Format non reconnu')}")
